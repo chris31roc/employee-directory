@@ -14,7 +14,7 @@ function App() {
   
     //API call to render employees data
     useEffect(() => {
-        fetch("https://randomuser.me/api/?results=200&nat=us")
+        fetch("https://randomuser.me/api/?results=100&nat=us")
           .then((res) => res.json())
           .then((json) => {
             setEmployees(json.results);
