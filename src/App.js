@@ -21,4 +21,9 @@ function App() {
           })
       
     }, []);
+
+    //function to display input searched names
+    function handleSearchTerm(event)  {
+    setSearchTerm(event.target.value)
+    }
 }
