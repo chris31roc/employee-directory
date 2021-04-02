@@ -26,4 +26,17 @@ function App() {
     function handleSearchTerm(event)  {
     setSearchTerm(event.target.value)
     }
+
+    const filteredEmployees = employees.filter(employee => `${employee.name.first.toLowerCase()}  ${employee.name.last.toLowerCase()}`.includes(searchTerm.toLowerCase()));
+
+    function handleSortByName() {
+      // sort array ascending or descending by first name
+      if (!sorted) {
+          setEmployees(employees.sort((a, b) => `${a.name.first} ${a.name.last}` > `${b.name.first} ${b.name.last}`? 1 : -1));
+          setSorted(true);
+      } else {
+          setEmployees(employees.sort((a, b) => `${a.name.first} ${a.name.last}` > `${b.name.first} ${b.name.last}` ? -1 : 1));
+          setSorted(false);
+      }
+    }
 }
