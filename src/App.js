@@ -39,4 +39,20 @@ function App() {
           setSorted(false);
       }
     }
+
+    return (
+        <>
+          <Header />
+            <div className="container">
+                <SearchForm onSearch={handleSearchTerm} searchTerm={searchTerm} />         
+                <table className="table">
+                  <Thead handleSortByName={handleSortByName}/>
+                  <tbody>
+                    <Tbody employees={filteredEmployees}/>
+                  </tbody>
+                </table>
+            </div>
+          <Footer />
+      </>
+   );
 }
