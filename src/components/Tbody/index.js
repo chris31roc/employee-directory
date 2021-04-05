@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 function Tbody({employees}) {
   return (
     employees.map(employee => (
